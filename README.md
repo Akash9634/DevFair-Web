@@ -12,4 +12,6 @@
 - Create a footer
 - create a login page
 - install axios
-- cors - install cors in your backend => add middleware to with configuration: origin, credentials: true also make handleLogin: true in login component 
+- cors - install cors in your backend => add middleware to with configuration: origin, credentials: true also make withCredentials: true in login component 
+- whenever making api call using axios pass withCredentials : true in frontend
+- install redux toolkit
