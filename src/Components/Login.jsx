@@ -8,6 +8,7 @@ export const Login = () => {
   
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ export const Login = () => {
     return navigate("/feed");
     }
     catch(err){
-      console.error(err);
+      setError(err?.response?.data || "Something went wrong");
     }
   }
   return (
@@ -40,6 +41,7 @@ export const Login = () => {
   <input type="text" value={password} className="input" onChange={(e) => setPassword(e.target.value)} placeholder="Type here" />
 </fieldset>
     </div>
+    <p className="text-red-500">{error}</p>
     <div className="card-actions justify-center">
       <button className="btn" onClick={handleLogin}>Login</button>
     </div>
