@@ -24,12 +24,16 @@ const Feed = () => {
   }, []);
 
  
-  return ( 
-  feed && (<div className="flex justify-center my-10">
-  <UserCard user={feed[0]} />
+ return (
+  <div className="flex justify-center my-10">
+    {feed && feed.length > 0 ? (
+      <UserCard user={feed[0]} />
+    ) : (
+      <h1 className="text-white">No users in feed</h1>
+    )}
   </div>
-  )
-)
+);
+
 }
 
 export default Feed;
